@@ -34,11 +34,13 @@ Segue abaixo a codificação de float e double com o tamanho em bits da codifica
 
 ## Cálculos
 - 1 Converter o número em binário
-	- 1.1 A parte fracionária pode ser convertida multiplicando ela por 2 e subtraindo a parte mais significativa sucetivas vezes.
+	- 1.1 A parte fracionária pode ser convertida multiplicando ela por 2 e subtraindo a parte mais significativa sucessivas vezes.
 - 2 Obter a mantissa **normalizada** movendo a vírgula até o número ficar no intervalo [1.0, 2.0)
 	- 2.1 Transformar o número em notação de base 2 elevado a quantidade de casas que a vírgula "pulou"
 - 3 Calcular o expoente pela fórmula: E = exp + bias
-	- 3.1 O valor de exp será negativo se o expoente for negativo
+	- 3.1 Bias é valor de excesso
+		- 3.1.1 Float: 127
+		- 3.1.2 Double: 1023
 - 4 Subtrair a parte fracionária da mantissa
 - 5 Converter o expoente em binário de 8 bits (float) ou 11 bits (double)
 - 6 Agrupar os bits de acordo com a codificação IEEE 754
